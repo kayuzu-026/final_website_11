@@ -36,3 +36,23 @@ img {
     justify-content: space-between;
     align-items: center;
 }
+
+.header-logo {
+    display: block;
+    width: 170px;
+}
+
+.site-menu ul {
+    display: flex;
+}
+
+.site-menu ul li {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.site-menu ul li {
+    font-family: "Reggae One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
