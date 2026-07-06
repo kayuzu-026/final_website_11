@@ -1,155 +1,102 @@
 @charset "utf-8";
-
-*,
-::before,  /*余白の設定をリセット*/
-::after {
-    padding:0;
-    margin: 0;
-    box-sizing: border-box; /*要素のサイズをpaddigとborderの値を含める*/
-}
-ul,ol {
-    list-style: none; /*リスト項目の頭にマークをつけない*/
-}
-a { /*リンクの下線と色を消す*/
-    color: inherit;
-    text-decoration: none;
-}
+/* ------------------------------
+   全体
+------------------------------ */
 body {
-    font-family: sans-serif; /*フォント指定*/
-    font-size: 16pt; /*フォントサイズ*/
-    color: #ff8c00; /*色*/
-    line-height: 1; /*行の高さ*/
-    background-color: #ffffff; /*背景色*/
+    margin: 0;
+    font-family: "Yu Gothic", sans-serif;
+    color: #333333;
 }
-img {
-    max-width: 100%; /*最大表示幅*/
+
+/* ------------------------------
+   ヘッダー
+------------------------------ */
+.header {
+    background: #ffffff;
+    border-bottom: 1px solid #dddddd;
 }
 
 .header-inner {
-    max-width: 1200px;
-    height: 110px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 40px;
-    padding-right: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
-.header-logo {
-    display: block;
-    width: 170px;
+.header-logo img {
+    height: 50px;
 }
 
+/* メニュー */
 .site-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
+    gap: 20px;
 }
 
-.site-menu ul li {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.site-menu ul li {
-    font-family: "Reggae One", system-ui;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.footer {
-    color:azure;
-    background-color:darkblue;
-    padding-top: 30px;
-    padding-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-}
-
-.footer-logo {
-    display: block;
-    width: 235px;
-    margin-top: 90px;
-}
-
-.copyright {
-    font-size: 14px;
+.site-menu a {
+    text-decoration: none;
+    color: #333333;
     font-weight: bold;
-    margin-top: 90px;
 }
 
-@media (max-width: 800px) {
+.site-menu a:hover {
+    color: #0077cc;
+}
+
+/* スマホ用メニューボタン */
+.menu-button {
+    display: none;
+    background: #0077cc;
+    color: #ffffff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+}
+
+/* ------------------------------
+   フッター
+------------------------------ */
+.footer {
+    background: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer .site-menu ul {
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    height: 40px;
+    margin: 10px 0;
+}
+
+.copylight {
+    color: #666;
+    font-size: 12px;
+}
+
+/* ------------------------------
+   スマホ対応
+------------------------------ */
+@media (max-width: 768px) {
     .site-menu ul {
-        display: block;
+        flex-direction: column;
+        gap: 10px;
         text-align: center;
     }
 
-    .site-menu li {
-        margin-top: 20px;
-    }
-
-    .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: #ffffff;
-        height: 50px;
-        z-index: 10;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    }
-
-    .header-inner {
-        padding-left: 20px;
-        padding-right: 20px;
-        height: 100%;
-        position: relative;
-    }
-
-    .header-logo {
-        width: 100px;
+    .menu-button {
+        display: block;
     }
 
     .header-site-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        color: #ffffff;
-        background-color: #736e62;
-        padding-top: 30px;
-        padding-bottom: 50px;
-        display: none;
-    }
-
-    .header-site-menu.is-show {
-        display: block;
-    }
-
-    .toggle-menu-button {
-        display: block;
-        width: 44px;
-        height: 34px;
-        background-image: url(../images/common/icon-menu.png);
-        background-size: 50%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: transparent;
-        border: none;
-        border-radius: 0;
-        outline: none;
-    }
-
-    .main {
-        padding-top: 50px;
-    }
-
-    .footer-logo {
-        margin-top: 60px;
-    }
-
-    .copyright {
-        margin-top: 50px;
+        display: none; /* toggle-menu.js で開閉する前提 */
     }
 }
