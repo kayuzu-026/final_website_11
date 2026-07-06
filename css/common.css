@@ -56,3 +56,25 @@ img {
     font-weight: 400;
     font-style: normal;
 }
+
+.footer {
+    color:azure;
+    background-color:darkblue;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.footer-logo {
+    display: block;
+    width: 235px;
+    margin-top: 90px;
+}
+
+.copyright {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 90px;
+}
