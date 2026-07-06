@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+*,
+::before,  /*余白の設定をリセット*/
+::after {
+    padding:0;
+    margin: 0;
+    box-sizing: border-box; /*要素のサイズをpaddigとborderの値を含める*/
+}
+ul,ol {
+    list-style: none; /*リスト項目の頭にマークをつけない*/
+}
+a { /*リンクの下線と色を消す*/
+    color: inherit;
+    text-decoration: none;
+}
+body {
+    font-family: sans-serif; /*フォント指定*/
+    font-size: 16pt; /*フォントサイズ*/
+    color: #ff8c00; /*色*/
+    line-height: 1; /*行の高さ*/
+    background-color: #ffffff; /*背景色*/
+}
+img {
+    max-width: 100%; /*最大表示幅*/
+}
+
