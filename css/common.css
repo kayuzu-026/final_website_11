@@ -11,7 +11,7 @@ body {
 }
 
 /* ------------------------------
-   ヘッダー
+   ヘッダー（PC）
 ------------------------------ */
 .header {
     background: #fff;
@@ -54,7 +54,7 @@ body {
 }
 
 /* ------------------------------
-   スマホ用メニューボタン
+   ハンバーガーボタン（PCでは非表示）
 ------------------------------ */
 .toggle-menu-button {
     display: none;
@@ -87,19 +87,37 @@ body {
     font-size: 12px;
 }
 
+
+
 /* ------------------------------
    スマホ対応
 ------------------------------ */
 @media (max-width: 768px) {
 
-    /* メニューを縦並びに */
-    .site-menu ul {
-        flex-direction: column;
-        gap: 14px;
-        text-align: center;
+    /* --- ヘッダーを固定 --- */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        height: 50px;
+        z-index: 10;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     }
 
-    /* ハンバーガーボタン表示 */
+    .header-inner {
+        height: 100%;
+        padding: 0 20px;
+        align-items: center;
+        position: relative;
+    }
+
+    .header-logo {
+        width: 100px;
+    }
+
+    /* --- ハンバーガーボタン表示 --- */
     .toggle-menu-button {
         display: block;
         width: 44px;
@@ -112,9 +130,9 @@ body {
         border-radius: 6px;
     }
 
-    /* スマホメニュー本体 */
+    /* --- スマホメニュー本体 --- */
     .header-site-menu {
-        position: static;
+        position: absolute;
         top: 100%;
         left: 0;
         right: 0;
@@ -125,12 +143,26 @@ body {
         animation: fadeSlide .3s ease;
     }
 
-    /* 開いた状態 */
     .header-site-menu.is-show {
         display: block;
     }
 
-    /* メニュー出現アニメーション */
+    /* --- メニューを縦並びに --- */
+    .site-menu ul {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+    }
+
+    .site-menu li {
+        margin-top: 20px;
+    }
+
+    .main {
+        margin-top: 50px;
+    }
+
+    /* --- メニュー出現アニメーション --- */
     @keyframes fadeSlide {
         from {
             opacity: 0;
