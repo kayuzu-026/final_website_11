@@ -1,25 +1,27 @@
 @charset "utf-8";
+
 /* ------------------------------
    全体
 ------------------------------ */
 body {
     margin: 0;
     font-family: "Yu Gothic", sans-serif;
-    color: #333333;
+    color: #333;
+    background: #fafafa;
 }
 
 /* ------------------------------
    ヘッダー
 ------------------------------ */
 .header {
-    background: #ffffff;
-    border-bottom: 1px solid #dddddd;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
 }
 
 .header-inner {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,33 +31,36 @@ body {
     height: 50px;
 }
 
-/* メニュー */
+/* ------------------------------
+   メニュー（PC）
+------------------------------ */
 .site-menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 24px;
 }
 
 .site-menu a {
     text-decoration: none;
-    color: #333333;
+    color: #333;
     font-weight: bold;
+    transition: color .2s ease;
 }
 
 .site-menu a:hover {
-    color: #0077cc;
+    color: #006699;
 }
 
-/* スマホ用メニューボタン */
-.menu-button {
+/* ------------------------------
+   スマホ用メニューボタン
+------------------------------ */
+.toggle-menu-button {
     display: none;
-    background: #0077cc;
-    color: #ffffff;
     border: none;
-    padding: 8px 14px;
-    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
 }
 
 /* ------------------------------
@@ -86,17 +91,54 @@ body {
    スマホ対応
 ------------------------------ */
 @media (max-width: 768px) {
+
+    /* メニューを縦並びに */
     .site-menu ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 14px;
         text-align: center;
     }
 
-    .menu-button {
+    /* ハンバーガーボタン表示 */
+    .toggle-menu-button {
+        display: block;
+        width: 44px;
+        height: 34px;
+        background-image: url(../images/common/icon-menu.png);
+        background-size: 60%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #006699;
+        border-radius: 6px;
+    }
+
+    /* スマホメニュー本体 */
+    .header-site-menu {
+        position: static;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #e6f0f2;
+        padding: 30px 0 50px;
+        display: none;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        animation: fadeSlide .3s ease;
+    }
+
+    /* 開いた状態 */
+    .header-site-menu.is-show {
         display: block;
     }
 
-    .header-site-menu {
-        display: none; /* toggle-menu.js で開閉する前提 */
+    /* メニュー出現アニメーション */
+    @keyframes fadeSlide {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
