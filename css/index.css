@@ -14,11 +14,13 @@
 
 .first-view-text h1 {
     color: white;
+    font-size: 46px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.4);
     font-family: "Noto Serif JP", serif;
 }
 
 .first-view-text p {
+    font-size: 24px;
     color: white;
     text-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
