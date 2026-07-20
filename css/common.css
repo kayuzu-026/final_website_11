@@ -153,15 +153,15 @@ img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #d08400; /* 好きな色に変更OK */
+    background: #d08400; 
     color: #fff;
     border: none;
     font-size: 22px;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    display: none; /* 最初は非表示 */
+    display: none; 
     transition: opacity 0.3s ease;
-    z-index: 9999; /* 他の要素より前に出す */
+    z-index: 9999; 
 }
 
 .back-to-top:hover {
