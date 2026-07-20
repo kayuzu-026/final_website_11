@@ -15,6 +15,7 @@
 .first-view-text h1 {
     color: white;
     text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    font-family: "Noto Serif JP", serif;
 }
 
 .first-view-text p {
@@ -30,6 +31,7 @@
 
     .first-view-text h1 {
         font-size: 22px;
+        font-family: "Noto Serif JP", serif;
     }
 
     .first-view-text p {
