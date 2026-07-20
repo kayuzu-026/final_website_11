@@ -187,7 +187,7 @@ img {
         height: auto;
         padding: 0 10px;
         gap: 10px;
-        /* margin: 0 auto; がスマホ時にも効いていれば、これで綺麗に真ん中に収まります */
+        
     }
 
     .header-logo {
@@ -203,7 +203,7 @@ img {
         height: 100%;
         object-fit: cover;
         object-position: center; 
-        border-radius: 8px; /* 角丸を維持 */
+        border-radius: 8px; 
     }
 
     .header-title {
