@@ -21,12 +21,16 @@
 }
 
 .feature-text {
-    overflow-x: auto;          
-    white-space: nowrap;    
+    margin-bottom: 20px;
+}
+
+.feature-images {
+    overflow-x: auto;      /* 横スクロールを許可 */
+    white-space: nowrap;   /* 横並びにする */
     padding-bottom: 10px;
 }
 
-.feature-text img {
+.feature-images img {
     display: inline-block;
     width: 320px;
     height: 220px;
@@ -35,10 +39,10 @@
     object-fit: cover;
 }
 
-.feature-text::-webkit-scrollbar {
+.feature-images::-webkit-scrollbar {
     height: 8px;
 }
-.feature-text::-webkit-scrollbar-thumb {
+.feature-images::-webkit-scrollbar-thumb {
     background: #ccc;
     border-radius: 4px;
 }
@@ -53,7 +57,7 @@
         font-size: 18px;
     }
 
-    .feature-text img {
+    .feature-images img {
         width: 260px;
         height: 180px;
         margin-right: 12px;
