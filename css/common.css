@@ -146,6 +146,28 @@ img {
     font-size: 12px;
 }
 
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #d08400; 
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: none; 
+    transition: opacity 0.3s ease;
+    z-index: 9999; 
+}
+
+.back-to-top:hover {
+    background: #b56f00;
+}
+
 /* ------------------------------
     スマホ対応
 ------------------------------ */
@@ -165,7 +187,7 @@ img {
         height: auto;
         padding: 0 10px;
         gap: 10px;
-        /* margin: 0 auto; がスマホ時にも効いていれば、これで綺麗に真ん中に収まります */
+        
     }
 
     .header-logo {
@@ -181,7 +203,7 @@ img {
         height: 100%;
         object-fit: cover;
         object-position: center; 
-        border-radius: 8px; /* 角丸を維持 */
+        border-radius: 8px; 
     }
 
     .header-title {
